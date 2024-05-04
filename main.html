@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>チンチロ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #dice {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    #result {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>チンチロ</h1>
+  <div id="dice">0</div>
+  <button onclick="rollDice()">サイコロを振る</button>
+  <div id="result"></div>
+
+  <script>
+    function rollDice() {
+      var diceValue = Math.floor(Math.random() * 6) + 1;
+      document.getElementById('dice').innerText = diceValue;
+      var result = getResult(diceValue);
+      document.getElementById('result').innerText = result;
+    }
+
+    function getResult(value) {
+      switch(value) {
+        case 1:
+          return '1点（イチ）';
+        case 2:
+          return '2点（ニ）';
+        case 3:
+          return '3点（サン）';
+        case 4:
+          return '4点（ヨン）';
+        case 5:
+          return '5点（ゴ）';
+        case 6:
+          return '6点（ロク）';
+        default:
+          return 'エラーが発生しました';
+      }
+    }
+  </script>
+</body>
+</html>
